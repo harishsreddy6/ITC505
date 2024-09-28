@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 3: Font Delivery</title>
+    <!-- Importing the Butcherman font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Butcherman&display=swap" rel="stylesheet">
+    <style>
+        /* Applying the Butcherman Font */
+        body {
+            font-family: 'Butcherman', sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 3em;
+            color: #ff0000;
+        }
+        p {
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <h1>How to Serve Custom Fonts Using @font-face</h1>
+    <p>
+        In this lab, we are using the <strong>"Butcherman"</strong> font to demonstrate how custom fonts can be delivered to the browser. The font is being fetched from Google Fonts, a popular service that allows you to include various fonts in your web projects.
+        <br><br>
+        By using the <code>@font-face</code> rule in CSS, we can specify a font-family and point to a URL where the font file is stored. The browser then loads the font from this URL, allowing the webpage to display text in the specified font. In this case, we are loading a font that is not commonly available on most computers, and its highly stylized, horror-like appearance makes it difficult to read.
+        <br><br>
+        To load the font, we added this line in the HTML <code>&lt;head&gt;</code> section: 
+        <code>&lt;link href="https://fonts.googleapis.com/css2?family=Butcherman&display=swap" rel="stylesheet"&gt;</code>. This imports the font from Google Fonts directly to our webpage. The result is a unique and difficult-to-read text style.
+    </p>
+
+    <footer>
+        <p>Last updated: 
+            <span id="lastModified"></span>
+        </p>
+    </footer>
+    <script type="text/javascript">
+        var x = document.lastModified;
+        document.getElementById('lastModified').textContent = x;
+    </script>
+</body>
+</html>
