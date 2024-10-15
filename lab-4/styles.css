@@ -6,8 +6,8 @@
 }
 
 body {
-    font-family: 'Lora', serif; /* Elegant serif font for a scholarly feel */
-    background-color: #f9f9f9;  /* Light gray background for easy readability */
+    font-family: 'Lora', serif; 
+    background-color: #f9f9f9; 
     color: #333333;
     line-height: 1.6;
     padding: 20px;
@@ -17,7 +17,7 @@ body {
 
 /* Header Section */
 header {
-    background-color: #4A90E2; /* Soft blue background for emphasis */
+    background-color: #4A90E2; 
     color: #ffffff;
     padding: 20px;
     text-align: center;
@@ -34,7 +34,7 @@ header p {
     font-size: 1.1em;
 }
 
-/* Main Content */
+/* Main Article Section */
 article {
     margin-top: 20px;
     padding: 20px;
@@ -43,9 +43,8 @@ article {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Headings */
 h2 {
-    font-family: 'Montserrat', sans-serif; /* Contrasting sans-serif for headings */
+    font-family: 'Montserrat', sans-serif; 
     font-size: 1.8em;
     color: #4A90E2;
     margin-top: 20px;
@@ -54,10 +53,44 @@ h2 {
     padding-bottom: 5px;
 }
 
-/* Paragraphs */
 p {
     font-size: 1.1em;
     margin-bottom: 15px;
+}
+
+/* Specific Styles for Stylistic Choices Section */
+article.stylistic-choices h2 {
+    font-size: 2em;
+    color: #333333;
+    text-decoration: underline;
+}
+
+article.stylistic-choices h3 {
+    font-size: 1.6em;
+    font-family: 'Montserrat', sans-serif;
+    color: #555555;
+    margin-top: 15px;
+    margin-bottom: 8px;
+}
+
+article.stylistic-choices p {
+    font-size: 1em;
+    color: #666666;
+    margin-left: 20px;
+    margin-right: 20px;
+    line-height: 1.5;
+}
+
+article.stylistic-choices strong {
+    color: #4A90E2;
+}
+
+article.stylistic-choices code {
+    background-color: #f1f1f1;
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-size: 0.95em;
+    color: #333333;
 }
 
 /* Lists */
