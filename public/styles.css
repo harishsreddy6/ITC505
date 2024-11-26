@@ -1,0 +1,167 @@
+/* Global Styles */
+body {
+    font-family: 'Comic Sans MS', sans-serif;
+    background: linear-gradient(to bottom right, #ffccff, #b3e0ff);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+/* Animated Heading */
+.animated-heading {
+    font-size: 3rem;
+    color: #e33e2f;
+    display: inline-block; /* Ensure animation applies correctly */
+    animation: jump 1s ease-in-out infinite; /* Add animation */
+}
+
+@keyframes jump {
+    0%, 100% {
+        transform: translateY(0); /* Original position */
+    }
+    50% {
+        transform: translateY(-20px); /* Moves up slightly */
+    }
+}
+
+
+h1 {
+    color: #ff4d4d;
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    animation: bounceIn 1s ease-out;
+}
+
+footer p {
+    color: #333;
+    font-size: 1.1em;
+}
+
+/* Form Styling */
+form {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 500px;
+    animation: fadeIn 1.5s ease-out;
+}
+
+/* Input Fields */
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 15px 0;
+    border: 2px solid #ff4d4d;
+    border-radius: 8px;
+    font-size: 1.2em;
+    outline: none;
+    transition: 0.3s;
+}
+
+input[type="text"]:focus {
+    border-color: #ff80b3;
+    box-shadow: 0 0 10px rgba(255, 128, 179, 0.5);
+}
+
+/* Button Styling */
+button {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.3em;
+    padding: 15px 30px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background-color: #ff1a1a;
+    transform: translateY(-3px);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+/* Footer Styling */
+footer {
+    margin-top: 30px;
+}
+
+footer p {
+    font-size: 1.2em;
+}
+
+/* Animation */
+@keyframes bounceIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    60% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media Query for responsiveness */
+@media screen and (max-width: 768px) {
+    body {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+
+    form {
+        padding: 20px;
+        width: 100%;
+        max-width: 400px;
+    }
+
+    button {
+        font-size: 1.1em;
+        padding: 12px 25px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    button {
+        font-size: 1em;
+        padding: 10px 20px;
+    }
+
+    input[type="text"] {
+        font-size: 1em;
+        padding: 8px;
+    }
+}
