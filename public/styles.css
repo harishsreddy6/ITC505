@@ -1,48 +1,89 @@
-/* Success Page Styling */
+/* Global Styles */
 body {
     font-family: 'Comic Sans MS', sans-serif;
-    background: linear-gradient(to bottom right, #a1ffce, #faffd1); /* Refreshing gradient */
+    background: linear-gradient(to bottom right, #a1ffce, #faffd1);
     margin: 0;
     padding: 0;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
     text-align: center;
+}
+
+/* Success Container Styling */
+.success-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    text-align: center;
     animation: fadeIn 1.5s ease-out;
+    width: 90%;
+    max-width: 600px;
 }
 
-/* Success Message Styling */
-.success-message {
-    font-size: 3rem;
-    color: #28a745; /* Green for success */
-    font-weight: bold;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-    margin-bottom: 20px;
-    animation: popIn 1.2s ease-out; /* Fun animation */
-}
-
-@keyframes popIn {
-    0% {
-        transform: scale(0);
-        opacity: 0;
-    }
-    60% {
-        transform: scale(1.2);
-        opacity: 1;
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
-/* Icon Styling */
+/* Success Icon */
 .success-icon {
-    font-size: 5rem;
+    font-size: 4rem;
+    color: #28a745;
+    animation: bounce 1.5s infinite ease-in-out;
+    margin-bottom: 20px;
+}
+
+/* Success Heading */
+.success-heading {
+    font-size: 2.5rem;
     color: #28a745;
     margin-bottom: 20px;
-    animation: bounce 1.5s infinite ease-in-out;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Mad Lib Story */
+.mad-lib-story {
+    font-size: 1.2rem;
+    color: #333333;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.mad-lib-story .highlight {
+    color: #ff5733;
+    font-weight: bold;
+}
+
+/* Button Styling */
+.action-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.3em;
+    padding: 15px 30px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.action-button:hover {
+    background-color: #218838;
+    transform: translateY(-3px);
+}
+
+.action-button:active {
+    transform: translateY(1px);
+}
+
+/* Keyframes for Animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @keyframes bounce {
@@ -50,85 +91,36 @@ body {
         transform: translateY(0);
     }
     50% {
-        transform: translateY(-15px);
+        transform: translateY(-10px);
     }
 }
 
-/* Button to Navigate Back */
-button {
-    background-color: #28a745;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 1.5em;
-    padding: 15px 40px;
-    cursor: pointer;
-    transition: 0.3s ease;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-button:hover {
-    background-color: #218838;
-    transform: translateY(-3px);
-}
-
-button:active {
-    transform: translateY(1px);
-}
-
-/* Add subtle animations to the button */
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    }
-    50% {
-        transform: scale(1.05);
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-    }
-    100% {
-        transform: scale(1);
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    }
-}
-
-button:hover {
-    animation: pulse 1.5s infinite;
-}
-
-/* Footer Styling */
-footer {
-    margin-top: 30px;
-    font-size: 1.2em;
-    color: #555;
-}
-
-/* Media Queries */
+/* Media Query for Responsiveness */
 @media screen and (max-width: 768px) {
-    .success-message {
-        font-size: 2.5rem;
+    .success-heading {
+        font-size: 2rem;
     }
 
-    .success-icon {
-        font-size: 4rem;
+    .mad-lib-story {
+        font-size: 1rem;
     }
 
-    button {
-        font-size: 1.2em;
-        padding: 12px 30px;
+    .action-button {
+        font-size: 1.1em;
+        padding: 12px 25px;
     }
 }
 
 @media screen and (max-width: 480px) {
-    .success-message {
-        font-size: 2rem;
+    .success-heading {
+        font-size: 1.8rem;
     }
 
-    .success-icon {
-        font-size: 3rem;
+    .mad-lib-story {
+        font-size: 0.9rem;
     }
 
-    button {
+    .action-button {
         font-size: 1em;
         padding: 10px 20px;
     }
