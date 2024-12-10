@@ -54,20 +54,47 @@
     </div>
 
     <div id="addendum" class="hidden">
-        <h2>Addendum</h2>
+        <h2>Addendum: Lights Out Game Development Process</h2>
         <p>
-            This project was designed to create a dynamic Lights Out game with additional features like tracking time, target moves, 
-            and best scores. The process involved designing a grid-based game with CSS Grid for flexibility and adding JavaScript 
-            logic for toggling cells and checking the winning condition. Challenges like creating a random but solvable board and 
-            implementing a timer were overcome using simulation methods and careful planning.
+            The development of the <b>Lights Out Game</b> focused on creating an engaging puzzle with dynamic features such as 
+            a timer, move counter, best score tracking, and interactive gameplay. The design centered on usability and visual 
+            appeal, especially for younger audiences.
+        </p>
+    
+        <h3>Design and Implementation</h3>
+        <p>
+            The grid layout was built using <b>CSS Grid</b>, ensuring scalability for different sizes (5x5 and 9x9). 
+            JavaScript handled the game logic, including toggling lights and their neighbors using a two-dimensional array to 
+            track grid states. Key functionalities include:
+        </p>
+        <ul>
+            <li><b>Move Tracking:</b> Accurately counts user actions separately from target moves.</li>
+            <li><b>Win Condition:</b> Verifies all lights are off using <code>Array.every()</code> for efficiency.</li>
+            <li><b>Randomized Solvability:</b> Ensures a solvable board by simulating random clicks on a solved grid.</li>
+        </ul>
+        <p>
+            The "best score" feature utilizes <code>localStorage</code> for persistence, and the timer employs 
+            <code>setInterval</code> for real-time tracking.
+        </p>
+    
+        <h3>Challenges and Solutions</h3>
+        <p>
+            Maintaining solvable randomized boards was a significant challenge, addressed by simulating random moves instead of 
+            toggling random cells directly. Debugging user interactions on larger grids like 9x9 required detailed testing to 
+            ensure correct toggling and win validation.
+        </p>
+    
+        <h3>Creative Insights</h3>
+        <p>
+            The user interface was intentionally designed to be minimal yet colorful to enhance engagement. The "You Win!" animation added a celebratory element, replacing the traditional <code>window.alert()</code>.
         </p>
         <p>
-            The timer was implemented using JavaScript's setInterval method, and the best score logic was stored in the browser's 
-            localStorage for persistence. The game's visual appeal was enhanced with kid-friendly colors and animations, ensuring 
-            an engaging experience for younger audiences.
+            Through this project, I gained insights into managing game states, optimizing UI responsiveness, and enhancing 
+            interactivity, which can be applied to future interactive web projects.
         </p>
         <button onclick="goBack()">Go Back</button>
     </div>
+    
 
     <footer>
         <p>Last updated: <span id="lastModified"></span> Harish Subbaramaiah</p>
