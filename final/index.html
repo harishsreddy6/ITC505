@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lights Out Game</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div id="welcome">
+        <h1>Welcome to Lights Out Game</h1>
+        <p>What do you want to play:</p>
+        <button onclick="startGame(5)">Play 5x5 LightsOut</button>
+        <button onclick="startGame(9)">Daily 9x9</button>
+        <button onclick="showTutorial()">See the LightsOut Tutorial</button>
+        <button onclick="showAddendum()">View Addendum</button>
+    </div>
+
+    <div id="game-container" class="hidden">
+        <h2>Lights Out Game</h2>
+        <p><b>Target:</b> <span id="target-moves">0</span></p>
+        <p><b>Moves:</b> <span id="current-moves">0</span></p>
+        <p><b>Time Elapsed:</b> <span id="timer">00:00</span></p>
+        <div id="game-board"></div>
+        <button onclick="resetGame()">Reset Game</button>
+        <button onclick="goBack()">Go Back</button>
+        <p><b>Best Score:</b> <span id="best-score">No scores yet</span></p>
+    </div>
+
+    <div id="tutorial" class="hidden">
+        <h2>Lights Out Tutorial</h2>
+        <p>
+            LightsOut is a puzzle where you are given a grid of cells, or lights, with some dark and others light. 
+            You must turn them all off by clicking on the cells. Each click toggles that cell and each of its immediate neighbors.
+        </p>
+        <h3>How To Solve LightsOut Puzzles</h3>
+        <p>
+            All valid LightsOut puzzles can be solved without clicking on any cell twice. This is because clicking on a cell twice 
+            is the same as not clicking it at all.
+        </p>
+        <h4>Chase The Lights</h4>
+        <p>
+            The easiest way to solve LightsOut puzzles is to use a method called "Chase The Lights". Starting with the second row, 
+            click on every cell that has a light on in the row above it. This will turn off all the lights in that row. 
+            Continue with each successive row until the only remaining lights are in the final row.
+        </p>
+        <h4>Fewest Moves</h4>
+        <p>
+            To figure out the fewest possible moves, take the click pattern for the top row and start with that on the original puzzle. 
+            This time you will only need to chase the lights once.
+        </p>
+        <button onclick="goBack()">Go Back</button>
+    </div>
+
+    <div id="addendum" class="hidden">
+        <h2>Addendum: Lights Out Game Development Process</h2>
+        <p>
+            The development of the <b>Lights Out Game</b> focused on creating an engaging puzzle with dynamic features such as 
+            a timer, move counter, best score tracking, and interactive gameplay. The design centered on usability and visual 
+            appeal, especially for younger audiences.
+        </p>
+    
+        <h3>Design and Implementation</h3>
+        <p>
+            The grid layout was built using <b>CSS Grid</b>, ensuring scalability for different sizes (5x5 and 9x9). 
+            JavaScript handled the game logic, including toggling lights and their neighbors using a two-dimensional array to 
+            track grid states. Key functionalities include:
+        </p>
+        <ul>
+            <li><b>Move Tracking:</b> Accurately counts user actions separately from target moves.</li>
+            <li><b>Win Condition:</b> Verifies all lights are off using <code>Array.every()</code> for efficiency.</li>
+            <li><b>Randomized Solvability:</b> Ensures a solvable board by simulating random clicks on a solved grid.</li>
+        </ul>
+        <p>
+            The "best score" feature utilizes <code>localStorage</code> for persistence, and the timer employs 
+            <code>setInterval</code> for real-time tracking.
+        </p>
+    
+        <h3>Challenges and Solutions</h3>
+        <p>
+            Maintaining solvable randomized boards was a significant challenge, addressed by simulating random moves instead of 
+            toggling random cells directly. Debugging user interactions on larger grids like 9x9 required detailed testing to 
+            ensure correct toggling and win validation.
+        </p>
+    
+        <h3>Creative Insights</h3>
+        <p>
+            The user interface was intentionally designed to be minimal yet colorful to enhance engagement. The "You Win!" animation added a celebratory element, replacing the traditional <code>window.alert()</code>.
+        </p>
+        <p>
+            Through this project, I gained insights into managing game states, optimizing UI responsiveness, and enhancing 
+            interactivity, which can be applied to future interactive web projects.
+        </p>
+        <button onclick="goBack()">Go Back</button>
+    </div>
+    
+
+    <footer>
+        <p>Last updated: <span id="lastModified"></span> Harish Subbaramaiah</p>
+    </footer>
+    <script>
+        var x = document.lastModified;
+        document.getElementById("lastModified").textContent = x;
+    </script>
+</body>
+</html>
