@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lights Out Game</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div id="welcome">
+        <h1>Welcome to Lights Out Game</h1>
+        <p>What do you want to play:</p>
+        <button onclick="startGame(5)">Play 5x5 LightsOut</button>
+        <button onclick="startGame(9)">Daily 9x9</button>
+        <button onclick="showTutorial()">See the LightsOut Tutorial</button>
+        <button onclick="showAddendum()">View Addendum</button>
+    </div>
+
+    <div id="game-container" class="hidden">
+        <h2>Lights Out Game</h2>
+        <p><b>Target:</b> <span id="target-moves">0</span></p>
+        <p><b>Moves:</b> <span id="current-moves">0</span></p>
+        <p><b>Time Elapsed:</b> <span id="timer">00:00</span></p>
+        <div id="game-board"></div>
+        <button onclick="resetGame()">Reset Game</button>
+        <button onclick="goBack()">Go Back</button>
+        <p><b>Best Score:</b> <span id="best-score">No scores yet</span></p>
+    </div>
+
+    <div id="tutorial" class="hidden">
+        <h2>Lights Out Tutorial</h2>
+        <p>
+            LightsOut is a puzzle where you are given a grid of cells, or lights, with some dark and others light. 
+            You must turn them all off by clicking on the cells. Each click toggles that cell and each of its immediate neighbors.
+        </p>
+        <h3>How To Solve LightsOut Puzzles</h3>
+        <p>
+            All valid LightsOut puzzles can be solved without clicking on any cell twice. This is because clicking on a cell twice 
+            is the same as not clicking it at all.
+        </p>
+        <h4>Chase The Lights</h4>
+        <p>
+            The easiest way to solve LightsOut puzzles is to use a method called "Chase The Lights". Starting with the second row, 
+            click on every cell that has a light on in the row above it. This will turn off all the lights in that row. 
+            Continue with each successive row until the only remaining lights are in the final row.
+        </p>
+        <h4>Fewest Moves</h4>
+        <p>
+            To figure out the fewest possible moves, take the click pattern for the top row and start with that on the original puzzle. 
+            This time you will only need to chase the lights once.
+        </p>
+        <button onclick="goBack()">Go Back</button>
+    </div>
+
+    <div id="addendum" class="hidden">
+        <h2>Addendum</h2>
+        <p>
+            This project was designed to create a dynamic Lights Out game with additional features like tracking time, target moves, 
+            and best scores. The process involved designing a grid-based game with CSS Grid for flexibility and adding JavaScript 
+            logic for toggling cells and checking the winning condition. Challenges like creating a random but solvable board and 
+            implementing a timer were overcome using simulation methods and careful planning.
+        </p>
+        <p>
+            The timer was implemented using JavaScript's setInterval method, and the best score logic was stored in the browser's 
+            localStorage for persistence. The game's visual appeal was enhanced with kid-friendly colors and animations, ensuring 
+            an engaging experience for younger audiences.
+        </p>
+        <button onclick="goBack()">Go Back</button>
+    </div>
+
+    <footer>
+        <p>Last updated: <span id="lastModified"></span> Harish Subbaramaiah</p>
+    </footer>
+    <script>
+        var x = document.lastModified;
+        document.getElementById("lastModified").textContent = x;
+    </script>
+</body>
+</html>
