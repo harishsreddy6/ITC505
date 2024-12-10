@@ -5,10 +5,15 @@ body {
     color: #333;
     margin: 0;
     padding: 0;
+    user-select: none; /* Prevents text selection */
+    -webkit-user-select: none; /* Chrome/Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
 }
 
 h1, h2, h3, h4 {
     color: #ff6347;
+    user-select: none; 
 }
 
 button {
@@ -20,10 +25,11 @@ button {
     cursor: pointer;
     border-radius: 5px;
     font-size: 16px;
-}
+    user-select: none;
 
 button:hover {
     background-color: #e55335;
+    user-select: none; 
 }
 
 #game-board {
@@ -31,6 +37,7 @@ button:hover {
     gap: 5px;
     margin: 20px auto;
     width: fit-content;
+    user-select: none; 
 }
 
 .square {
@@ -39,17 +46,21 @@ button:hover {
     background-color: #000;
     border: 1px solid #ffffff;
     cursor: pointer;
+    user-select: none; 
 }
 
 .square.is-off {
     background-color: #fff;
+    user-select: none; 
 }
 
 .hidden {
     display: none;
+    user-select: none; 
 }
 
 footer {
     margin-top: 20px;
     font-size: 12px;
+    user-select: none; 
 }
